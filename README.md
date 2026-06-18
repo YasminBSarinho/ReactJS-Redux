@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DBC Desk
 
-## Getting Started
+Sistema de Help Desk desenvolvido com Next.js, Redux Toolkit e RTK Query.
 
-First, run the development server:
+Deploy: https://dbcdesk-git-main-yasminbsarinhos-projects.vercel.app/
+
+## Funcionalidades
+
+* Login de usuários
+* Listagem de chamados
+* Busca de chamados
+* Abertura de chamados
+* Detalhamento de chamados
+* Comentários em chamados
+* Atualização de status
+* Integração com MockAPI
+* Gerenciamento de cache com RTK Query
+
+## Tecnologias
+
+* Next.js
+* React
+* TypeScript
+* Redux Toolkit
+* RTK Query
+* Tailwind CSS
+* MockAPI
+
+## Usuários para Teste
+
+### Cliente
+
+**E-mail:** [cliente@dbc.com](mailto:cliente@dbc.com)
+
+**Senha:** 123456
+
+Permissões:
+
+* Visualizar chamados
+* Criar chamados
+* Comentar em chamados
+
+### Funcionário
+
+**E-mail:** [funcionario@dbc.com](mailto:funcionario@dbc.com)
+
+**Senha:** 123456
+
+Permissões:
+
+* Visualizar chamados
+* Comentar em chamados
+* Alterar status dos chamados
+
+## Executando o projeto
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Execute o projeto:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A aplicação estará disponível em:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```txt
+http://localhost:3000
+```
