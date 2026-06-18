@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { useCriaChamadoMutation } from "@/redux/api/chamadosApi";
+import { useRouter } from "next/navigation"; 
+import { useAppSelector } from "@/redux/hooks"; 
+import { useEffect } from "react";
 
 import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
@@ -11,6 +14,10 @@ export default function AbrirChamadoPage() {
   const [descricao, setDescricao] = useState("");
   const [prioridade, setPrioridade] = useState("baixa");
   const [criarChamado] = useCriaChamadoMutation();
+
+  const { usuario } = useAppSelector((state) => state.user); 
+  const router = useRouter(); 
+  useEffect(() => { if (!usuario) { router.push("/login"); } }, [usuario, router]);
 
   async function handleSubmit() {
     try {

@@ -4,10 +4,17 @@ import { useGetChamadosQuery } from "@/redux/api/chamadosApi";
 import CardChamado from "@/components/layout/CardChamado";
 import BuscaChamado from "@/components/ui/BuscaChamado";
 import { useState } from "react";
+import { useRouter } from "next/navigation"; 
+import { useAppSelector } from "@/redux/hooks"; 
+import { useEffect } from "react";
 
 export default function ChamadosPage() {
   const {data: chamados, isLoading, error} = useGetChamadosQuery(undefined, {pollingInterval: 10000}); //polling a cada 10 segundosa
   const [busca, setBusca] = useState("");
+
+  const { usuario } = useAppSelector((state) => state.user); 
+  const router = useRouter(); 
+  useEffect(() => { if (!usuario) { router.push("/login"); } }, [usuario, router]);
 
   if (isLoading) {
     return <p>Carregando...</p>;

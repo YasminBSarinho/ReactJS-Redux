@@ -12,6 +12,8 @@ import {
   useCriarComentarioMutation,
 } from "@/redux/api/comentariosApi";
 import { useAtualizarStatusChamadoMutation } from "@/redux/api/chamadosApi";
+import { useRouter } from "next/navigation"; 
+import { useEffect } from "react";
 
 export default function DetalhesChamadoPage() {
   //pega o id da url
@@ -22,6 +24,9 @@ export default function DetalhesChamadoPage() {
   const { usuario } = useAppSelector((state) => state.user);
   const { data: chamado, isLoading, error} = useGetChamadoByIdQuery(id); // faz a requisição usando o id que pegou
   const { data: comentarios, isLoading: carregandoComentarios} = useGetComentariosPorChamadoQuery(id,  {pollingInterval: 10000}); //pega os comentarios atribuidos a esse chamado, e faz o polling(refaz a requisição)
+
+  const router = useRouter(); 
+  useEffect(() => { if (!usuario) { router.push("/login"); } }, [usuario, router]);
 
   const [criarComentario] = useCriarComentarioMutation(); //hook de mutation, ele cria novos comentarios
   const [atualizarStatusChamado] = useAtualizarStatusChamadoMutation(); // outro hook mutation, vai atualizar os status dos chamados
