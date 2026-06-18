@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  /* Backgrounds */
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+
+  /* Borders */
+  --border: #dbe3ef;
+
+  /* Brand DBC */
+  --primary: #1b57f6;
+  --primary-hover: #1748cb;
+
+  /* Status */
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --error: #dc2626;
+}
+
+[data-theme="dark"] {
+  /* Backgrounds */
+  --background: #0f172a;
+  --surface: #111827;
+  --surface-hover: #1f2937;
+
+  /* Text */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+
+  /* Borders */
+  --border: #334155;
+
+  /* Brand DBC */
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+
+  /* Status */
+  --success: #22c55e;
+  --warning: #fbbf24;
+  --error: #ef4444;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+
+  --color-border: var(--border);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
